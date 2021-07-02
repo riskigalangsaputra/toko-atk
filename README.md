@@ -6,5 +6,5 @@
    * password : owner
 
 ## Framework ##
-* CodeIgniter (CI)
+* CodeIgniter 3
 * Bootstrap 4
