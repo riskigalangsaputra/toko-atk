@@ -1,7 +1,7 @@
 # Toko ATK (Alat Tulis Kantor) Web App
 
 ## Data Login
-* Login admin : 
+* Login Owner : 
    * username : owner@yopmail.com
    * password : owner
 
