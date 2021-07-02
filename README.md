@@ -7,4 +7,4 @@
 
 ## Framework ##
 * CodeIgniter 3
-* Bootstrap 4
+* Bootstrap 5
