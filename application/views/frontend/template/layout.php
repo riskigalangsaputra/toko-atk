@@ -45,12 +45,22 @@
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-shopping-cart"></i> 0 |</a>
                 </li>
+                <?php if ($this->session->userdata('user_logged') == FALSE) { ?>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="<?=site_url('/login')?>">Login |</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="<?=site_url('/register')?>">Register</a>
                 </li>
+                <?php } ?>
+                <?php if ($this->session->userdata('user_logged')) { ?>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-user"></i> <?=$this->session->userdata('user_logged')->fullname?> |</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="<?=site_url('login/logout')?>"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+                <?php } ?>
               </ul>
             </form>
           </div>
@@ -58,7 +68,7 @@
       </nav>
     </header>
     <main>
-       <?php echo $contents ?>
+      <?php echo $contents ?>
     </main>
     <footer class="text-muted py-5">
       <div class="container">

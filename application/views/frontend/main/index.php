@@ -1,5 +1,11 @@
 <section class="py-5 text-center container">
   <div class="row py-lg-5">
+    <?php if ($this->session->flashdata('success')): ?>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <?php echo $this->session->flashdata('success'); ?> <i class="fas fa-check"></i>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <?php endif; ?>
     <div class="col-lg-6 col-md-8 mx-auto">
       <h1 class="fw-light">Welcome To Toko ATK</h1>
       <p class="lead text-muted">Toko ATK adalah merupakan perusahaan penyedia berbagai kebutuhan alat tulis kantor berkualitas di Jakarta timur.</p>

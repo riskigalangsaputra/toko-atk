@@ -28,28 +28,36 @@
                   <h3>Register Form<strong> Toko ATK</strong></h3>
                   <p class="mb-4">masukan data anda untuk membuat akun baru di Toko ATK.</p>
                 </div>
-                <form action="#" method="post">
+                <?php if ($this->session->flashdata('error')): ?>
+                <div class="alert alert-danger" role="alert">
+                  <i class="fa fa-close"></i> <?php echo $this->session->flashdata('error'); ?>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <?php endif; ?>
+                <form action="<?php echo site_url('register/process') ?>" method="post">
                   <div class="form-group first">
                     <label for="fullname">Fullname</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="fullname" required>
                   </div>
                   <div class="form-group first">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control">
+                    <input type="email" class="form-control" name="email" required>
                   </div>
                   <div class="form-group first">
                     <label for="phone">Phone Number</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="phone" required>
                   </div>
                   <div class="form-group last mb-4">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control" name="password" required>
                   </div>
                   <input type="submit" value="Register Now" class="btn text-white btn-block btn-primary">
                 </form>
-                  <div style="margin-top:15px;">
-                    <span class="ml-auto">Sudah punya akun ? <a href="<?=site_url('/login')?>" class="forgot-pass">Login disini</a></span>
-                  </div>
+                <div style="margin-top:15px;">
+                  <span class="ml-auto">Sudah punya akun ? <a href="<?=site_url('/login')?>" class="forgot-pass">Login disini</a></span>
+                </div>
               </div>
             </div>
           </div>
