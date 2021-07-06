@@ -24,12 +24,10 @@ class Login extends CI_Controller {
             		$this->session->set_flashdata('success', 'Login berhasil');
             		redirect(site_url('/'));
             	}
-            	
             } else {
             	$this->session->set_flashdata('error', 'Pastikan email dan password anda dengan benar !');
             	redirect(site_url('/login'));
             }
-            
         }
 
 		$this->load->view('login');
