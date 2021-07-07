@@ -67,7 +67,7 @@ class Transaction extends CI_Controller {
 		// insert to transaction
 		$id_transaction = uniqid();
 		$transaction_code = "ATK-".uniqid();
-		$status = "waiting";
+		$status = "WAITING_PAYMENT";
 		$create_date = date('Y-m-d');
 		$expired_date = date('Y-m-d', strtotime(' +1 day'));
 

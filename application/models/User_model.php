@@ -55,10 +55,10 @@ class User_model extends CI_Model
        return $this->db->get_where($this->_table, ["id_user" => $id])->row();
     }
 
-    public function getAll()
-    {
-        return $this->db->get($this->_table)->result();
-    }
+    // public function getAll()
+    // {
+    //     return $this->db->get($this->_table)->result();
+    // }
 
     public function save()
     {
@@ -73,6 +73,12 @@ class User_model extends CI_Model
         $this->created_at = date("Y-m-d");
         $this->is_active = 1;
         return $this->db->insert($this->_table, $this);
+    }
+
+    public function getAll()
+    {
+        $query = $this->db->query("select * from user where role = 'customer'");
+        return $query->result();
     }
 
 }

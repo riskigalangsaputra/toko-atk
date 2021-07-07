@@ -14,4 +14,15 @@ class Transaction_model extends CI_Model
         $this->db->update($table,$data);
     }
 
+    public function getAll()
+    {
+        $query = $this->db->query("select * from transaction t INNER JOIN user u ON t.id_user = u.id_user");
+        return $query->result();
+    }
+    
+    public function getTransaction()
+    {
+        $query = $this->db->query("select * from transaction t INNER JOIN user u ON t.id_user = u.id_user where t.status = 'WAITING_PAYMENT'");
+        return $query->result();
+    }
 }

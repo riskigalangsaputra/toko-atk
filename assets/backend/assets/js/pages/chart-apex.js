@@ -23,7 +23,7 @@ $(document).ready(function() {
                     data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
                 }],
                 title: {
-                    text: 'Product Trends by Month',
+                    text: 'Transaksi Pendapatan Perbulan',
                     align: 'left'
                 },
                 grid: {

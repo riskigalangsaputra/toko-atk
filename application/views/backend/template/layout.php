@@ -72,13 +72,16 @@
                             <a href="#!" class="pc-link "><span class="pc-micon"><i class="fas fa-database"></i></span><span class="pc-mtext">Master</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
                             <ul class="pc-submenu">
                                 <li class="pc-item"><a class="pc-link" href="<?=site_url('backend/master/product')?>">Product</a></li>
-                                <li class="pc-item"><a class="pc-link" href="<?=site_url('backend/master/customer')?>">Customers</a></li>
+                                <li class="pc-item"><a class="pc-link" href="<?=site_url('backend/master/customers')?>">Customers</a></li>
                             </ul>
+                        </li>
+                        <li class="pc-item">
+                            <a href="<?=base_url('backend/transaction')?>" class="pc-link "><span class="pc-micon"><i class="fas fa-spinner"></i></span><span class="pc-mtext">Transaction</span></a>
                         </li>
                         <li class="pc-item pc-hasmenu">
                             <a href="#!" class="pc-link "><span class="pc-micon"><i class="fas fa-chart-bar"></i></span><span class="pc-mtext">Report</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
                             <ul class="pc-submenu">
-                                <li class="pc-item"><a class="pc-link" href="form_elements.html">Transaction</a></li>
+                                <li class="pc-item"><a class="pc-link" href="<?=site_url('backend/transaction/history')?>">Transaction History</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -151,21 +154,22 @@
     <!-- Apex Chart -->
     <script src="<?=base_url()?>assets/backend/assets/js/plugins/apexcharts.min.js"></script>
     <script src="<?=base_url()?>assets/backend/assets/js/pages/dashboard-sale.js"></script>
+    <script src="<?=base_url()?>assets/backend/assets/js/pages/chart-apex.js"></script>
     <script type="text/javascript">
     function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            
-            reader.onload = function(e) {
-            $('#blah').attr('src', e.target.result);
-            }
-            
-            reader.readAsDataURL(input.files[0]); // convert to base64 string
-        }
+    if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e) {
+    $('#blah').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+    }
     }
     
     $("#imgInp").change(function() {
-        readURL(this);
+    readURL(this);
     })
     </script>
 </body>

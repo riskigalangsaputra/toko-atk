@@ -1,5 +1,10 @@
 <section class="py-5">
 	<div class="container px-4 px-lg-5 my-5">
+		<header>
+			<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+				<h2 class="display-5 fw-normal">Shopping cart</h2>
+			</div>
+		</header>
 		<div class="row gx-4 gx-lg-5 align-items-center">
 			<?php if ($this->session->flashdata('success')): ?>
 			<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -31,20 +36,24 @@
 						<td class="text-center"><?="Rp " . number_format($row->total,0,',','.')?></td>
 					</tr>
 					<?php endforeach; ?>
+					<?php if (!empty($carts)) { ?>
 					<tr>
 						<th colspan="4" style="text-align: right;">Subtotal</th>
 						<th class="text-center"><?="Rp " . number_format($subtotal,0,',','.')?></th>
 					</tr>
+					<?php } ?>
 					<?php if (empty($carts)) { ?>
 					<tr><td colspan="5" class="text-center">Cart is empty</td></tr>
 					<?php } ?>
 				</tbody>
 			</table>
+			<?php if (!empty($carts)) { ?>
 			<table class="table table-bordered">
 				<tr>
 					<td style="text-align: right;"><a href="<?=site_url("transaction/checkout")?>" class="btn btn-outline-primary btn-sm"><i class="fas fa-shopping-bag"></i> Checkout</a></td>
 				</tr>
 			</table>
+			<?php } ?>
 		</div>
 	</div>
 </section>
